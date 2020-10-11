@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Button area */
+.button-area {
+    width: 598px;
+    margin: 0 auto;
+}
+
+/* Alphabet button */
+.alphabet-button {
+    background: #77dd77;
+    border: solid 2px gray;
+    border-radius: 10px;
+    height: 40px;
+    width: 40px;
+    margin: 3px;
+    font-size: 18px;
+}
+
+.alphabet-button:focus {
+    outline: none;
+}
