@@ -5,12 +5,17 @@ var alpahbetList = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 // For each character in the alphabet
 $.each(alpahbetList, function(index, alphabet) {
     // Create a button for that alphabet
-    var buttonEl = $("<button>");
-    buttonEl.text(alphabet);
+    var buttonEl = $("<button>").text(alphabet);
     buttonEl.addClass("alphabet-button");
     buttonEl.val(alphabet);
+    buttonEl.attr("disabled", true);
     $(".button-area").append(buttonEl);
 });
+
+// Function to start the round by enabling all buttons
+function startRound() {
+    $(".alphabet-button").attr("disabled", false);
+}
 
 // When an alphabet button is clicked
 $(".alphabet-button").click(function() {
@@ -30,3 +35,5 @@ $(document).keydown(function(event) {
         letterButton.click();
     }    
 });
+
+startRound();
