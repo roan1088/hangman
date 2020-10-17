@@ -30,3 +30,7 @@ body {
 .alphabet-button:focus {
     outline: none;
 }
+
+#word-view {
+    letter-spacing: 0.5em;
+}
