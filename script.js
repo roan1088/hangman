@@ -52,6 +52,32 @@ $(".alphabet-button").click(function() {
     console.log($(this).val());
     // Disable the button
     $(this).attr("disabled", true);
+    // Check of the guessed letter is in the word
+    var guessedLetter = $(this).val();
+    // If guess is correct
+    if (wordToGuess.includes(guessedLetter)) {
+        // console.log("hit");
+        // For each letter
+        $.each(wordToGuess.split(""), function(index, letter) {
+            // If the letter matches
+            if (letter === guessedLetter) {
+                console.log(letter);
+                /// Replace the '_' in the string to the letter
+                wordGuess = wordGuess.substr(0, index) + letter + wordGuess.substr(index + 1);
+            }
+        });
+        // console.log(wordGuess);
+        // Update the display
+        $("#word-view").text(wordGuess);
+    }
+    // If guess is wrong
+    else {
+        // console.log("miss");
+        // Lose a life
+        userLives--;
+        // Update the lives
+        $("#user-lives").text(userLives);
+    }
 });
 
 // When a key is pressed
