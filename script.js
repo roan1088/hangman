@@ -26,8 +26,12 @@ function getPokemon() {
 
 // Function to start the round
 function startRound() {
+    // Reset the lives to 5
+    userLives = 5;
+    $("#user-lives").text(userLives);
     // Enable all the alphabet buttons
     $(".alphabet-button").attr("disabled", false);
+    $(".alphabet-button").removeClass("letter-clicked");
     // Get a random word to be guessed
     wordToGuess = getPokemon();
     console.log(wordToGuess);
@@ -45,6 +49,7 @@ function startRound() {
     // Update the display
     $("#category").text("Generation One Pokemon");
     $("#word-view").text(wordGuess);
+    $("#result").text("");
 }
 
 // Function called when round ends
@@ -110,6 +115,14 @@ $(document).keydown(function(event) {
         letterButton.click();
     }    
 });
+
+// When go again button is clicked
+$("#replay-button").click(function(event) {
+    // Hide this button
+    $(this).attr("hidden", true);
+    // Start a new round
+    startRound();
+})
 
 // Game flow starts here
 // Request list of gen 1 pokemons
