@@ -47,11 +47,26 @@ function startRound() {
     $("#word-view").text(wordGuess);
 }
 
+// Function called when round ends
+function endRound() {
+    // Disable all the buttons
+    $(".alphabet-button").attr("disabled", true);
+    // Check if its a loss
+    if (userLives === 0) {
+        $("#result").text("You lost! The word was " + wordToGuess);
+    }
+    else {
+        $("#result").text("You won!");
+    }
+    $("#replay-button").attr("hidden", false);
+}
+
 // When an alphabet button is clicked
 $(".alphabet-button").click(function() {
     console.log($(this).val());
     // Disable the button
     $(this).attr("disabled", true);
+    $(this).addClass("letter-clicked");
     // Check of the guessed letter is in the word
     var guessedLetter = $(this).val();
     // If guess is correct
@@ -77,6 +92,10 @@ $(".alphabet-button").click(function() {
         userLives--;
         // Update the lives
         $("#user-lives").text(userLives);
+    }
+    // Check if the game is done
+    if ((wordGuess === wordToGuess) || (userLives === 0)) {
+        endRound();
     }
 });
 

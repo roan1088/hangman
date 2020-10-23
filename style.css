@@ -19,6 +19,7 @@ body {
 /* Alphabet button */
 .alphabet-button {
     background: #77dd77;
+    color: black;
     border: solid 2px gray;
     border-radius: 10px;
     height: 40px;
@@ -27,10 +28,22 @@ body {
     font-size: 18px;
 }
 
-.alphabet-button:focus {
+.letter-clicked {
+    color: gray;
+}
+
+button:focus {
     outline: none;
 }
 
 #word-view {
     letter-spacing: 0.5em;
+}
+
+#replay-button {
+    background: #77dd77;
+    border: solid 2px gray;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 4px 12px;
 }
