@@ -41,9 +41,9 @@ function startRound() {
             wordGuess += letter;
         }
     });
-    console.log(wordGuess);
+    // console.log(wordGuess);
     // Update the display
-    $("#category").text("Genereation One Pokemon");
+    $("#category").text("Generation One Pokemon");
     $("#word-view").text(wordGuess);
 }
 
@@ -76,7 +76,7 @@ $(".alphabet-button").click(function() {
         $.each(wordToGuess.split(""), function(index, letter) {
             // If the letter matches
             if (letter === guessedLetter) {
-                console.log(letter);
+                // console.log(letter);
                 /// Replace the '_' in the string to the letter
                 wordGuess = wordGuess.substr(0, index) + letter + wordGuess.substr(index + 1);
             }
