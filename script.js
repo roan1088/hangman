@@ -114,6 +114,10 @@ $(document).keydown(function(event) {
         // Trigger the click function of the button
         letterButton.click();
     }    
+    // Pressing space triggers go again button if it is visible
+    if (event.key === ' ' && !($("#replay-button").attr("hidden"))) {
+        $("#replay-button").click();
+    }
 });
 
 // When go again button is clicked
