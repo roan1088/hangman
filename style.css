@@ -4,16 +4,17 @@
 
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 6px;
 }
 
 .container {
-    width: 598px;
+    max-width: 598px;
     margin: 0 auto;
 }
 
 /* Button area */
 .button-area {
-    width: 598px;
+    max-width: 598px;
 }
 
 /* Alphabet button */
@@ -46,4 +47,20 @@ button:focus {
     border-radius: 10px;
     font-size: 20px;
     padding: 4px 12px;
+}
+
+@media screen and (max-width: 620px) {
+    .container, .button-area {
+        max-width: 414px;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .container, .button-area {
+        max-width: 308px;
+    }
+    .alphabet-button {
+        height: 38px;
+        width: 38px;
+    }
 }
