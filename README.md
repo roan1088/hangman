@@ -5,6 +5,8 @@
 ## Description
 A game of Hangman. Guess a the hidden word by either clicking on the letter buttons or by using your keyboard. Be careful, you're only allowed 5 wrong guesses per round.
 
+![Hangman](./hangman.png)
+
 # Link to deployed website:
 https://roan1088.github.io/hangman/
 
